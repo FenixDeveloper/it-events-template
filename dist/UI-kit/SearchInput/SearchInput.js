@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -15,12 +16,12 @@ var SearchInput = function SearchInput(_ref) {
     placeholder = _ref.placeholder,
     onChange = _ref.onChange,
     onSubmit = _ref.onSubmit;
-  return /*#__PURE__*/React.createElement("form", {
+  return /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: onSubmit,
     style: {
       width: "100%"
     }
-  }, /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/_react.default.createElement("input", {
     onChange: onChange,
     name: name,
     type: "text",

@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 import Logo from "../../UI-kit/Logo/Logo";

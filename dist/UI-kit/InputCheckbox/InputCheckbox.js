@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -14,9 +15,9 @@ var InputCheckbox = function InputCheckbox(_ref) {
     value = _ref.value,
     checked = _ref.checked,
     onChange = _ref.onChange;
-  return /*#__PURE__*/React.createElement("label", {
+  return /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: label
-  }, /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/_react.default.createElement("input", {
     onChange: onChange,
     id: label,
     name: name,
@@ -24,7 +25,7 @@ var InputCheckbox = function InputCheckbox(_ref) {
     type: "checkbox",
     className: _stylesModule.default.checkbox,
     checked: checked
-  }), /*#__PURE__*/React.createElement("span", {
+  }), /*#__PURE__*/_react.default.createElement("span", {
     className: _stylesModule.default.checkboxLabel
   }, value));
 };

@@ -1,5 +1,5 @@
+import React from "react";
 import clsx from "clsx";
-import _ from "lodash";
 import styles from "./styles.module.scss";
 import Cross from "./../../images/Actions/close.svg";
 import PropTypes from "prop-types";

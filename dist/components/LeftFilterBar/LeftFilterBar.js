@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.LeftFilterBar = void 0;
-var _react = require("react");
-var dayjs = _interopRequireWildcard(require("dayjs"));
+var _react = _interopRequireWildcard(require("react"));
+var _dayjs = _interopRequireDefault(require("dayjs"));
 var _weekday = _interopRequireDefault(require("dayjs/plugin/weekday"));
 var _framerMotion = require("framer-motion");
 var _motion = require("../../utils/motion");
@@ -31,7 +31,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-dayjs.extend(_weekday.default);
+_dayjs.default.extend(_weekday.default);
 var LeftFilterBar = function LeftFilterBar() {
   var _dataLists$topics2;
   var _useState = (0, _react.useState)(false),
@@ -90,24 +90,24 @@ var LeftFilterBar = function LeftFilterBar() {
       value: "Today",
       label: "Сегодня",
       filterFields: {
-        date__gte: dayjs().format("YYYY-MM-DD"),
-        date__lte: dayjs().format("YYYY-MM-DD")
+        date__gte: (0, _dayjs.default)().format("YYYY-MM-DD"),
+        date__lte: (0, _dayjs.default)().format("YYYY-MM-DD")
       }
     }, {
       id: "tomorrow",
       value: "Tomorrow",
       label: "Завтра",
       filterFields: {
-        date__gte: dayjs().add(1, "d").format("YYYY-MM-DD"),
-        date__lte: dayjs().add(1, "d").format("YYYY-MM-DD")
+        date__gte: (0, _dayjs.default)().add(1, "d").format("YYYY-MM-DD"),
+        date__lte: (0, _dayjs.default)().add(1, "d").format("YYYY-MM-DD")
       }
     }, {
       id: "thisweekend",
       value: "This weekend",
       label: "В эти выходные",
       filterFields: {
-        date__gte: dayjs().weekday(6).format("YYYY-MM-DD"),
-        date__lte: dayjs().weekday(7).format("YYYY-MM-DD")
+        date__gte: (0, _dayjs.default)().weekday(6).format("YYYY-MM-DD"),
+        date__lte: (0, _dayjs.default)().weekday(7).format("YYYY-MM-DD")
       }
     }, {
       id: "pickdate",
@@ -120,31 +120,31 @@ var LeftFilterBar = function LeftFilterBar() {
         value: "This week",
         label: "На этой неделе",
         filterFields: {
-          date__gte: dayjs().format("YYYY-MM-DD"),
-          date__lte: dayjs().weekday(7).format("YYYY-MM-DD")
+          date__gte: (0, _dayjs.default)().format("YYYY-MM-DD"),
+          date__lte: (0, _dayjs.default)().weekday(7).format("YYYY-MM-DD")
         }
       }, {
         id: "thismonth",
         value: "This month",
         label: "В этом месяце",
         filterFields: {
-          date__gte: dayjs().format("YYYY-MM-DD"),
-          date__lte: dayjs().add(1, "M").date(0).format("YYYY-MM-DD")
+          date__gte: (0, _dayjs.default)().format("YYYY-MM-DD"),
+          date__lte: (0, _dayjs.default)().add(1, "M").date(0).format("YYYY-MM-DD")
         }
       }, {
         id: "nextmonth",
         value: "Next month",
         label: "В следующем месяце",
         filterFields: {
-          date__gte: dayjs().add(2, "M").date(1).format("YYYY-MM-DD"),
-          date__lte: dayjs().add(2, "M").date(0).format("YYYY-MM-DD")
+          date__gte: (0, _dayjs.default)().add(2, "M").date(1).format("YYYY-MM-DD"),
+          date__lte: (0, _dayjs.default)().add(2, "M").date(0).format("YYYY-MM-DD")
         }
       });
     }
     return dateOptions.map(function (option) {
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/_react.default.createElement("div", {
         key: option.id
-      }, /*#__PURE__*/React.createElement(_UIKit.InputRadio, {
+      }, /*#__PURE__*/_react.default.createElement(_UIKit.InputRadio, {
         label: option.id,
         value: option.label,
         name: "date",
@@ -153,12 +153,12 @@ var LeftFilterBar = function LeftFilterBar() {
           handleInputChange(event);
           setFilters(_objectSpread(_objectSpread({}, filters), option.filterFields));
         }
-      }, option.id === "pickdate" && /*#__PURE__*/React.createElement(_UIKit.InputDate, {
+      }, option.id === "pickdate" && /*#__PURE__*/_react.default.createElement(_UIKit.InputDate, {
         onChange: function onChange(event) {
           handleDateChange(event);
           setFilters(_objectSpread(_objectSpread({}, filters), {}, {
-            date__gte: dayjs(event.currentTarget.value).subtract(1, "d").format("YYYY-MM-DD"),
-            date__lte: dayjs(event.currentTarget.value).add(1, "d").format("YYYY-MM-DD")
+            date__gte: (0, _dayjs.default)(event.currentTarget.value).subtract(1, "d").format("YYYY-MM-DD"),
+            date__lte: (0, _dayjs.default)(event.currentTarget.value).add(1, "d").format("YYYY-MM-DD")
           }));
         },
         onBlur: handleDateBlur
@@ -168,7 +168,7 @@ var LeftFilterBar = function LeftFilterBar() {
   var renderSpecialityList = function renderSpecialityList() {
     var _dataLists$topics;
     return dataLists === null || dataLists === void 0 || (_dataLists$topics = dataLists.topics) === null || _dataLists$topics === void 0 ? void 0 : _dataLists$topics.slice(0, showAllTopics ? dataLists.topics.length : 4).map(function (item, index) {
-      return /*#__PURE__*/React.createElement(_UIKit.InputCheckbox, {
+      return /*#__PURE__*/_react.default.createElement(_UIKit.InputCheckbox, {
         key: index,
         label: item.id,
         name: "specialities",
@@ -181,24 +181,24 @@ var LeftFilterBar = function LeftFilterBar() {
   var FiltersListItem = (0, _react.useCallback)(function (_ref) {
     var title = _ref.title,
       children = _ref.children;
-    return /*#__PURE__*/React.createElement("li", {
+    return /*#__PURE__*/_react.default.createElement("li", {
       className: _stylesModule.default.listItem
-    }, /*#__PURE__*/React.createElement("p", {
+    }, /*#__PURE__*/_react.default.createElement("p", {
       className: _stylesModule.default.itemTitle
     }, title), children);
   }, []);
-  return /*#__PURE__*/React.createElement(_framerMotion.motion.section, {
+  return /*#__PURE__*/_react.default.createElement(_framerMotion.motion.section, {
     variants: _motion.filtersVariants,
     initial: "hidden",
     animate: "visible",
     className: _stylesModule.default.filterForm
-  }, /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/_react.default.createElement("h2", {
     className: _stylesModule.default.filterTitle
-  }, "\u0424\u0438\u043B\u044C\u0442\u0440\u044B"), /*#__PURE__*/React.createElement("ul", {
+  }, "\u0424\u0438\u043B\u044C\u0442\u0440\u044B"), /*#__PURE__*/_react.default.createElement("ul", {
     className: _stylesModule.default.filterList
-  }, /*#__PURE__*/React.createElement(FiltersListItem, {
+  }, /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435"
-  }, /*#__PURE__*/React.createElement(_UIKit.SearchInput, {
+  }, /*#__PURE__*/_react.default.createElement(_UIKit.SearchInput, {
     placeholder: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430",
     name: "query",
     value: values.query,
@@ -211,9 +211,9 @@ var LeftFilterBar = function LeftFilterBar() {
     onSubmit: function onSubmit(e) {
       return e.preventDefault();
     }
-  })), /*#__PURE__*/React.createElement(FiltersListItem, {
+  })), /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u0424\u043E\u0440\u043C\u0430\u0442"
-  }, /*#__PURE__*/React.createElement(_UIKit.InputCheckbox, {
+  }, /*#__PURE__*/_react.default.createElement(_UIKit.InputCheckbox, {
     label: "online",
     value: "Online",
     name: "status",
@@ -224,7 +224,7 @@ var LeftFilterBar = function LeftFilterBar() {
         formats: event.target.value.toLowerCase()
       }));
     }
-  }), /*#__PURE__*/React.createElement(_UIKit.InputCheckbox, {
+  }), /*#__PURE__*/_react.default.createElement(_UIKit.InputCheckbox, {
     label: "offline",
     value: "Offline",
     name: "status",
@@ -235,9 +235,9 @@ var LeftFilterBar = function LeftFilterBar() {
         formats: event.target.value.toLowerCase()
       }));
     }
-  })), /*#__PURE__*/React.createElement(FiltersListItem, {
+  })), /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u0413\u043E\u0440\u043E\u0434"
-  }, /*#__PURE__*/React.createElement(_UIKit.SearchInput, {
+  }, /*#__PURE__*/_react.default.createElement(_UIKit.SearchInput, {
     placeholder: "\u041F\u043E\u0438\u0441\u043A \u0433\u043E\u0440\u043E\u0434\u0430",
     name: "city",
     value: values.city,
@@ -250,10 +250,10 @@ var LeftFilterBar = function LeftFilterBar() {
     onSubmit: function onSubmit(e) {
       return e.preventDefault();
     }
-  }), findValues && findValues.city && findValues.city !== "" && /*#__PURE__*/React.createElement("div", {
+  }), findValues && findValues.city && findValues.city !== "" && /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.serchContainer
   }, findValues.city.map(function (item, index) {
-    return /*#__PURE__*/React.createElement("button", {
+    return /*#__PURE__*/_react.default.createElement("button", {
       key: index,
       onClick: function onClick() {
         setItemOnClick({
@@ -265,19 +265,19 @@ var LeftFilterBar = function LeftFilterBar() {
       },
       className: _stylesModule.default.findItem
     }, item);
-  }))), /*#__PURE__*/React.createElement(FiltersListItem, {
+  }))), /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u0414\u0430\u0442\u0430"
-  }, renderDateOptions(), /*#__PURE__*/React.createElement("button", {
+  }, renderDateOptions(), /*#__PURE__*/_react.default.createElement("button", {
     onClick: toggleShowAllDates,
     className: _stylesModule.default.showMore
-  }, showAllDates ? "Показать меньше" : "Показать больше")), /*#__PURE__*/React.createElement(FiltersListItem, {
+  }, showAllDates ? "Показать меньше" : "Показать больше")), /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u041D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435"
-  }, renderSpecialityList(), (dataLists === null || dataLists === void 0 || (_dataLists$topics2 = dataLists.topics) === null || _dataLists$topics2 === void 0 ? void 0 : _dataLists$topics2.length) > 3 && /*#__PURE__*/React.createElement("button", {
+  }, renderSpecialityList(), (dataLists === null || dataLists === void 0 || (_dataLists$topics2 = dataLists.topics) === null || _dataLists$topics2 === void 0 ? void 0 : _dataLists$topics2.length) > 3 && /*#__PURE__*/_react.default.createElement("button", {
     onClick: toggleShowAllTopics,
     className: _stylesModule.default.showMore
-  }, showAllTopics ? "Показать меньше" : "Показать больше")), /*#__PURE__*/React.createElement(FiltersListItem, {
+  }, showAllTopics ? "Показать меньше" : "Показать больше")), /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u0426\u0435\u043D\u0430"
-  }, /*#__PURE__*/React.createElement(_UIKit.InputRadio, {
+  }, /*#__PURE__*/_react.default.createElement(_UIKit.InputRadio, {
     label: "free",
     value: "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E",
     name: "price",
@@ -288,7 +288,7 @@ var LeftFilterBar = function LeftFilterBar() {
         price__lte: 0
       }));
     }
-  }), /*#__PURE__*/React.createElement(_UIKit.InputRadio, {
+  }), /*#__PURE__*/_react.default.createElement(_UIKit.InputRadio, {
     label: "paid",
     value: "\u041F\u043B\u0430\u0442\u043D\u043E",
     name: "price",
@@ -299,9 +299,9 @@ var LeftFilterBar = function LeftFilterBar() {
         price__gte: 1
       }));
     }
-  })), /*#__PURE__*/React.createElement(FiltersListItem, {
+  })), /*#__PURE__*/_react.default.createElement(FiltersListItem, {
     title: "\u0422\u0435\u0433\u0438"
-  }, /*#__PURE__*/React.createElement(_UIKit.SearchInput, {
+  }, /*#__PURE__*/_react.default.createElement(_UIKit.SearchInput, {
     placeholder: "\u041F\u043E\u0438\u0441\u043A \u0442\u0435\u0433\u0430",
     name: "findTags",
     value: values.findTags
@@ -316,12 +316,12 @@ var LeftFilterBar = function LeftFilterBar() {
     onSubmit: function onSubmit(e) {
       return e.preventDefault();
     }
-  }), findValues && findValues.findTags && findValues.findTags !== "" && /*#__PURE__*/React.createElement("div", {
+  }), findValues && findValues.findTags && findValues.findTags !== "" && /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.serchContainer
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.tagsList
   }, findValues.findTags.map(function (item, index) {
-    return /*#__PURE__*/React.createElement(_UIKit.TagButton, {
+    return /*#__PURE__*/_react.default.createElement(_UIKit.TagButton, {
       key: index,
       value: item
       //isEnabled={values.tags.includes(item.label)}
@@ -334,12 +334,12 @@ var LeftFilterBar = function LeftFilterBar() {
         }));
       }
     });
-  }))), /*#__PURE__*/React.createElement("span", {
+  }))), /*#__PURE__*/_react.default.createElement("span", {
     className: _stylesModule.default.popularTags
-  }, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0442\u0435\u0433\u0438"))), /*#__PURE__*/React.createElement(_TagSection.TagSection, {
+  }, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u044B\u0435 \u0442\u0435\u0433\u0438"))), /*#__PURE__*/_react.default.createElement(_TagSection.TagSection, {
     handleChange: handleButtonChange,
     tags: dataLists.allTags
-  }), /*#__PURE__*/React.createElement(_UIKit.PrimaryButton, {
+  }), /*#__PURE__*/_react.default.createElement(_UIKit.PrimaryButton, {
     onClick: handleSearchClick,
     title: "\u041D\u0430\u0439\u0442\u0438"
   }));

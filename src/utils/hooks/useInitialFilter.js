@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { apiEvents } from "../../utils/api";
+import React, { useEffect, useState } from "react";
+import { apiEvents } from "../api";
 
 export function useInitialFilter() {
   const [dataLists, setDataLists] = useState([]);

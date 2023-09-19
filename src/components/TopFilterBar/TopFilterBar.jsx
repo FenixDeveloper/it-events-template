@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.scss";
 import { useFiltersContext } from "../../utils/context/SearchFilterContext";
 import { TagButton } from "../../UI-kit";

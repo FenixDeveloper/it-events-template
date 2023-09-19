@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _arrowRight = require("../../images/Arrows/arrow-right.svg");
 var _reactRouterDom = require("react-router-dom");
@@ -16,11 +17,11 @@ var PrimaryButton = function PrimaryButton(_ref) {
     disabled = _ref.disabled,
     target = _ref.target,
     onClick = _ref.onClick;
-  return variant === "link" ? /*#__PURE__*/React.createElement(_reactRouterDom.Link, {
+  return variant === "link" ? /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: variant === "link" ? to : "",
     target: target,
     className: _stylesModule.default.primaryLink
-  }, title, /*#__PURE__*/React.createElement(_arrowRight.ReactComponent, null)) : /*#__PURE__*/React.createElement("button", {
+  }, title, /*#__PURE__*/_react.default.createElement(_arrowRight.ReactComponent, null)) : /*#__PURE__*/_react.default.createElement("button", {
     onClick: onClick,
     type: "button",
     className: _stylesModule.default.primaryButton,

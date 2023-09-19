@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.scss";
 import Logo from "../../UI-kit/Logo/Logo";
 import { SocialIcons } from "../../images/SocialIcons/socialIcons";

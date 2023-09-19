@@ -1,10 +1,11 @@
 "use strict";
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.EventDescription = void 0;
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _UIKit = require("../../UI-kit");
 var _DescriptionTabs = require("../DescriptionTabs/DescriptionTabs");
@@ -16,6 +17,8 @@ var _likeButton_active = require("../../images/like-button_active.svg");
 var _share = require("../../images/Actions/share.svg");
 var _helperFunctions = require("../../utils/helperFunctions");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -44,39 +47,39 @@ var EventDescription = function EventDescription(_ref) {
   var eventStartDate = (0, _helperFunctions.formatDate)(selectedEvent.date_start);
   var eventEndDate = (0, _helperFunctions.formatDate)(selectedEvent.date_end);
   var eventDate = eventStartDate === eventEndDate ? eventStartDate : "".concat(eventStartDate, " - ").concat(eventEndDate);
-  return /*#__PURE__*/React.createElement("section", {
+  return /*#__PURE__*/_react.default.createElement("section", {
     className: _stylesModule.default.eventDescription
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.eventHeader
-  }, showNotification && /*#__PURE__*/React.createElement(_UIKit.PopupLink, {
+  }, showNotification && /*#__PURE__*/_react.default.createElement(_UIKit.PopupLink, {
     top: "55px",
     right: "0"
-  }), /*#__PURE__*/React.createElement("h1", {
+  }), /*#__PURE__*/_react.default.createElement("h1", {
     className: _stylesModule.default.eventName
-  }, selectedEvent.title), /*#__PURE__*/React.createElement("div", {
+  }, selectedEvent.title), /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.eventFigures
-  }, /*#__PURE__*/React.createElement("figure", {
+  }, /*#__PURE__*/_react.default.createElement("figure", {
     className: _stylesModule.default.eventFigure,
     onClick: handleLikeClick
-  }, isLiked ? /*#__PURE__*/React.createElement(_likeButton_active.ReactComponent, null) : /*#__PURE__*/React.createElement(_likeButton.ReactComponent, null)), /*#__PURE__*/React.createElement("figure", {
+  }, isLiked ? /*#__PURE__*/_react.default.createElement(_likeButton_active.ReactComponent, null) : /*#__PURE__*/_react.default.createElement(_likeButton.ReactComponent, null)), /*#__PURE__*/_react.default.createElement("figure", {
     className: _stylesModule.default.eventFigure,
     onClick: handleButtonClick
-  }, /*#__PURE__*/React.createElement(_share.ReactComponent, null)))), /*#__PURE__*/React.createElement("ul", {
+  }, /*#__PURE__*/_react.default.createElement(_share.ReactComponent, null)))), /*#__PURE__*/_react.default.createElement("ul", {
     className: _stylesModule.default.eventDates
-  }, /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement("li", {
     className: _stylesModule.default.eventDate
-  }, /*#__PURE__*/React.createElement(_calendar.ReactComponent, null), eventDate), /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement(_calendar.ReactComponent, null), eventDate), /*#__PURE__*/_react.default.createElement("li", {
     className: _stylesModule.default.eventDate
-  }, /*#__PURE__*/React.createElement(_time.ReactComponent, null), (0, _helperFunctions.formatTimeRange)(selectedEvent.date_start, selectedEvent.date_end)), /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement(_time.ReactComponent, null), (0, _helperFunctions.formatTimeRange)(selectedEvent.date_start, selectedEvent.date_end)), /*#__PURE__*/_react.default.createElement("li", {
     className: _stylesModule.default.eventDate
-  }, /*#__PURE__*/React.createElement(_place.ReactComponent, null), (selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.address) === " " || (selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.address) === "" ? "Online" : selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.address), /*#__PURE__*/React.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement(_place.ReactComponent, null), (selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.address) === " " || (selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.address) === "" ? "Online" : selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.address), /*#__PURE__*/_react.default.createElement("li", {
     className: _stylesModule.default.eventPrice
-  }, (0, _helperFunctions.formatPrice)(selectedEvent.price))), /*#__PURE__*/React.createElement(_UIKit.PrimaryButton, {
+  }, (0, _helperFunctions.formatPrice)(selectedEvent.price))), /*#__PURE__*/_react.default.createElement(_UIKit.PrimaryButton, {
     variant: "link",
     target: "_blank",
     title: "\u0421\u0430\u0439\u0442 \u043C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u044F",
     to: selectedEvent === null || selectedEvent === void 0 ? void 0 : selectedEvent.url
-  }), /*#__PURE__*/React.createElement(_DescriptionTabs.DescriptionTabs, {
+  }), /*#__PURE__*/_react.default.createElement(_DescriptionTabs.DescriptionTabs, {
     selectedEvent: selectedEvent
   }));
 };

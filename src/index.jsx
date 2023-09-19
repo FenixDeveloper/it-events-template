@@ -1,4 +1,4 @@
-import "./index.scss";
+import React from "react";
 
 export { default as App } from "./components/App/App";
 export { Card } from "./components/Card/Card";
@@ -14,26 +14,42 @@ export { SortBar } from "./components/SortBar/SortBar";
 export { TagSection } from "./components/TagSection/TagSection";
 export { TopFilterBar } from "./components/TopFilterBar/TopFilterBar";
 export { Layout } from "./Layout/Layout";
+
 export {
-  InputCheckbox,
-  InputRadio,
-  InputDate,
-  SearchInput,
-  SearchField,
-  PrimaryButton,
-  Loader,
-  PageTitle,
-  PopupLink,
-  PaddingWrapper,
-  TagButton,
+   InputCheckbox,
+   InputRadio,
+   InputDate,
+   SearchInput,
+   SearchField,
+   PrimaryButton,
+   Loader,
+   PageTitle,
+   PopupLink,
+   PaddingWrapper,
+   TagButton,
 } from "./UI-kit";
 
 export { apiEvents } from "./utils/api";
-export * as helper from "./utils/helperFunctions";
+
+export {
+   parsePrice,
+    parseDate,
+    parseMonth,
+    parseEventDate,
+   formatDate,
+    formatTimeRange,
+    getRandomEvents,
+   handleCopyLink,
+   getCurrentEvents,
+   getPastEvents
+} from "./utils/helperFunctions";
 
 export {useEventsContext} from "./utils/context/EventsContext";
 export {useFiltersContext} from "./utils/context/SearchFilterContext";
 export {useFilter} from "./utils/hooks/useFilter";
+
+export {EventsProvider} from "./utils/context/EventsContext";
+export {FiltersProvider} from "./utils/context/SearchFilterContext";
 
 export { default as useFilters } from "./utils/hooks/useFilters";
 export { default as useIsMobileResolution } from "./utils/hooks/useIsMobileResolution";

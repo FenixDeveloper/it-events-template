@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.scss";
 import { useEventsContext } from "../../utils/context/EventsContext";
 import { useFiltersContext } from "../../utils/context/SearchFilterContext";

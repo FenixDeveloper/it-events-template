@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.TopFilterBar = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _SearchFilterContext = require("../../utils/context/SearchFilterContext");
 var _UIKit = require("../../UI-kit");
@@ -61,7 +62,7 @@ var TopFilterBar = function TopFilterBar() {
     }
     var tags = Array.isArray(value) ? value : value.split(", ");
     return tags.map(function (tag, tagIndex) {
-      return /*#__PURE__*/React.createElement(_UIKit.TagButton, {
+      return /*#__PURE__*/_react.default.createElement(_UIKit.TagButton, {
         key: tagIndex,
         value: tag,
         onChange: function onChange() {
@@ -72,15 +73,15 @@ var TopFilterBar = function TopFilterBar() {
     });
   };
   var ResetButton = function ResetButton() {
-    return /*#__PURE__*/React.createElement("button", {
+    return /*#__PURE__*/_react.default.createElement("button", {
       onClick: resetFilters,
       className: _stylesModule.default.resetButton
     }, "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C \u0432\u0441\u0435");
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.container
   }, "\u0424\u0438\u043B\u044C\u0442\u0440\u044B: ", filterCount.length, arr.map(function (item) {
     return renderTags(item);
-  }), /*#__PURE__*/React.createElement(ResetButton, null));
+  }), /*#__PURE__*/_react.default.createElement(ResetButton, null));
 };
 exports.TopFilterBar = TopFilterBar;

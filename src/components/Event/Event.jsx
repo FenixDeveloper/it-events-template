@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.scss";
 import { CardList } from "../CardList/CardList";
 import { EventDescription } from "../EventDescription/EventDescription";

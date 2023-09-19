@@ -4,8 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _clsx2 = _interopRequireDefault(require("clsx"));
-var _lodash = _interopRequireDefault(require("lodash"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _close = _interopRequireDefault(require("./../../images/Actions/close.svg"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -18,12 +18,12 @@ var TagButton = function TagButton(_ref) {
   var value = _ref.value,
     onChange = _ref.onChange,
     isEnabled = _ref.isEnabled;
-  return /*#__PURE__*/React.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       return onChange(!isEnabled);
     },
     className: (0, _clsx2.default)(_stylesModule.default.tagElement, _defineProperty({}, _stylesModule.default.clicked, isEnabled))
-  }, value, isEnabled && /*#__PURE__*/React.createElement("img", {
+  }, value, isEnabled && /*#__PURE__*/_react.default.createElement("img", {
     src: _close.default,
     alt: "Cross"
   }));

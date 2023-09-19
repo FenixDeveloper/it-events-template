@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Event = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _CardList = require("../CardList/CardList");
 var _EventDescription = require("../EventDescription/EventDescription");
@@ -22,22 +23,22 @@ var Event = function Event(_ref) {
   var handleImageError = function handleImageError(e) {
     e.target.src = _defaultImage.default;
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.eventContainer
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.main
-  }, /*#__PURE__*/React.createElement(_EventDescription.EventDescription, {
+  }, /*#__PURE__*/_react.default.createElement(_EventDescription.EventDescription, {
     selectedEvent: selectedEvent,
     favoriteEvents: favoriteEvents,
     onLikeClick: toggleFavorite
-  }), /*#__PURE__*/React.createElement("img", {
+  }), /*#__PURE__*/_react.default.createElement("img", {
     className: _stylesModule.default.eventImage,
     src: selectedEvent.image,
     alt: selectedEvent.title,
     onError: handleImageError
-  })), /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.listWrapper
-  }, /*#__PURE__*/React.createElement(_CardList.CardList, {
+  }, /*#__PURE__*/_react.default.createElement(_CardList.CardList, {
     title: "\u0421\u043C\u043E\u0442\u0440\u0438\u0442\u0435 \u0442\u0430\u043A\u0436\u0435",
     listDirection: "row",
     cardDirection: "column",

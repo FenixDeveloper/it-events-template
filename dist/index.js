@@ -1,6 +1,5 @@
 "use strict";
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -38,6 +37,18 @@ Object.defineProperty(exports, "EventDescription", {
   enumerable: true,
   get: function get() {
     return _EventDescription.EventDescription;
+  }
+});
+Object.defineProperty(exports, "EventsProvider", {
+  enumerable: true,
+  get: function get() {
+    return _EventsContext.EventsProvider;
+  }
+});
+Object.defineProperty(exports, "FiltersProvider", {
+  enumerable: true,
+  get: function get() {
+    return _SearchFilterContext.FiltersProvider;
   }
 });
 Object.defineProperty(exports, "Footer", {
@@ -154,7 +165,66 @@ Object.defineProperty(exports, "apiEvents", {
     return _api.apiEvents;
   }
 });
-exports.helper = void 0;
+Object.defineProperty(exports, "formatDate", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.formatDate;
+  }
+});
+Object.defineProperty(exports, "formatTimeRange", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.formatTimeRange;
+  }
+});
+Object.defineProperty(exports, "getCurrentEvents", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.getCurrentEvents;
+  }
+});
+Object.defineProperty(exports, "getPastEvents", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.getPastEvents;
+  }
+});
+Object.defineProperty(exports, "getRandomEvents", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.getRandomEvents;
+  }
+});
+Object.defineProperty(exports, "handleCopyLink", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.handleCopyLink;
+  }
+});
+Object.defineProperty(exports, "parseDate", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.parseDate;
+  }
+});
+Object.defineProperty(exports, "parseEventDate", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.parseEventDate;
+  }
+});
+Object.defineProperty(exports, "parseMonth", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.parseMonth;
+  }
+});
+Object.defineProperty(exports, "parsePrice", {
+  enumerable: true,
+  get: function get() {
+    return _helperFunctions.parsePrice;
+  }
+});
 Object.defineProperty(exports, "useEventsContext", {
   enumerable: true,
   get: function get() {
@@ -185,7 +255,7 @@ Object.defineProperty(exports, "useIsMobileResolution", {
     return _useIsMobileResolution.default;
   }
 });
-require("./index.scss");
+var _react = _interopRequireDefault(require("react"));
 var _App = _interopRequireDefault(require("./components/App/App"));
 var _Card = require("./components/Card/Card");
 var _CardList = require("./components/CardList/CardList");
@@ -201,13 +271,10 @@ var _TopFilterBar = require("./components/TopFilterBar/TopFilterBar");
 var _Layout = require("./Layout/Layout");
 var _UIKit = require("./UI-kit");
 var _api = require("./utils/api");
-var _helper = _interopRequireWildcard(require("./utils/helperFunctions"));
-exports.helper = _helper;
+var _helperFunctions = require("./utils/helperFunctions");
 var _EventsContext = require("./utils/context/EventsContext");
 var _SearchFilterContext = require("./utils/context/SearchFilterContext");
 var _useFilter = require("./utils/hooks/useFilter");
 var _useFilters = _interopRequireDefault(require("./utils/hooks/useFilters"));
 var _useIsMobileResolution = _interopRequireDefault(require("./utils/hooks/useIsMobileResolution"));
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

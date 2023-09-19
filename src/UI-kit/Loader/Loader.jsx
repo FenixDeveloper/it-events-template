@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./styles.module.scss";
 import { Circles } from "react-loader-spinner";
 import Overlay from "./Overlay/Overlay";

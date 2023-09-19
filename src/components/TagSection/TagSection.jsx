@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import { TagButton } from "../../UI-kit";
 import { useFiltersContext } from "../../utils/context/SearchFilterContext";

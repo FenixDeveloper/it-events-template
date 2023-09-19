@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "../InputRadio/styles.module.scss";
 
 const InputDate = ({ onChange, onBlur }) => {

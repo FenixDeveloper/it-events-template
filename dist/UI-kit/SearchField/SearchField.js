@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.SearchField = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.scss"));
 var _EventsContext = require("../../utils/context/EventsContext");
 var _SearchFilterContext = require("../../utils/context/SearchFilterContext");
@@ -31,19 +32,19 @@ var SearchField = function SearchField() {
     var query = getValuesArray();
     handleSearch(query);
   };
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: _stylesModule.default.container,
     style: {
       justifyContent: isFiltersOpen && "flex-end"
     }
-  }, !isFiltersOpen && /*#__PURE__*/React.createElement(_SearchInput.default, {
+  }, !isFiltersOpen && /*#__PURE__*/_react.default.createElement(_SearchInput.default, {
     withForm: true,
     value: values.query,
     onChange: handleQueryChange,
     name: "query",
     placeholder: "\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430",
     onSubmit: handleSubmit
-  }), /*#__PURE__*/React.createElement(_menu.ReactComponent, {
+  }), /*#__PURE__*/_react.default.createElement(_menu.ReactComponent, {
     onClick: toggleFilters,
     style: {
       cursor: "pointer"

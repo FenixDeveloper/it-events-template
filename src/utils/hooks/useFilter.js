@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import debounce from "../debounce";
 import { useInitialFilter } from "./useInitialFilter";
 import { useEventsContext } from "../context/EventsContext";

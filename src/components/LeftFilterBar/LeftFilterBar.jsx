@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import * as dayjs from "dayjs";
+import React, { useState, useCallback } from "react";
+import dayjs from "dayjs";
 import weekday from "dayjs/plugin/weekday";
 import { motion as m } from "framer-motion";
 import { filtersVariants } from "../../utils/motion";

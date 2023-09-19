@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiEvents } from "../api";
 import { getCurrentEvents, getRandomEvents } from "../helperFunctions";
