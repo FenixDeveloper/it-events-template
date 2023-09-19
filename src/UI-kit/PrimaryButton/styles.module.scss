@@ -1,0 +1,52 @@
+@import "../../scss/vars.scss";
+
+.primaryLink {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background-color: #674eae;
+  color: #f1f0eb;
+  border: 0;
+  border-radius: 8px;
+  width: fit-content;
+  height: 44px;
+  padding: 10px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #443375;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:active {
+    background-color: #291b51;
+  }
+}
+
+.primaryButton {
+  background-color: transparent;
+  color: $mainTextGreyColor;
+  border: 1px solid $mainTextGreyColor;
+  border-radius: 8px;
+  min-height: 44px;
+  font-size: 16px;
+  text-align: left;
+  padding: 0 34px;
+  margin-top: 47px;
+  margin-left: auto;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $purpleColor;
+    color: $purpleColor;
+  }
+
+  &:active {
+    border: 1px solid $purpleColor;
+    background-color: $purpleColor;
+    color: $whiteColor;
+  }
+}
