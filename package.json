@@ -29,7 +29,6 @@
     "format": "prettier ./src --write",
     "prepare": "husky install",
     "commit": "cz",
-    "predeploy": "npm run storybook",
     "deploy": "gh-pages -d storybook-static",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
