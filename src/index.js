@@ -30,3 +30,10 @@ export {
 
 export { apiEvents } from "./utils/api";
 export * as helper from "./utils/helperFunctions";
+
+export {useEventsContext} from "./utils/context/EventsContext";
+export {useFiltersContext} from "./utils/context/SearchFilterContext";
+export {useFilter} from "./utils/hooks/useFilter";
+
+export { default as useFilters } from "./utils/hooks/useFilters";
+export { default as useIsMobileResolution } from "./utils/hooks/useIsMobileResolution";
