@@ -38,7 +38,7 @@ function defaultEvent() {
     price: "15 000 р.",
     url: "string",
     image:
-      "http://80.87.107.15/media/events/image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2023-06-10_085724.png",
+      "https://it.acceleratorpracticum.ru/media/events/image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2023-06-10_085724.png",
   };
 }
 

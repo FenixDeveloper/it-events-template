@@ -1,6 +1,4 @@
 import { CardList } from "./CardList";
-import { Card } from "../Card/Card.stories";
-import styles from "./styles.module.scss";
 import { events } from "./storyData";
 
 export default {

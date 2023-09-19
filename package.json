@@ -85,11 +85,6 @@
     "storybook": "^7.4.0",
     "webpack": "^5.88.2"
   },
-  "lint-staged": {
-    "*.{js,jsx}": "npm run lint",
-    "*.{js,jsx,css,md,html,json}": "npm run format",
-    "*.{js,jsx,scss,css}": "npm run compile"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
